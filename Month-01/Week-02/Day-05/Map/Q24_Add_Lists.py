@@ -6,9 +6,3 @@ sum_list =  list(map( lambda first, second: first + second,first_list,second_lis
 
 print(sum_list)
 
-
-nums = [1, 2, 3]
-
-result = map(lambda x: x*x, nums)
-
-print(type(result))
