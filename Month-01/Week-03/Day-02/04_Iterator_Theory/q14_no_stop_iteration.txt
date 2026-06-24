@@ -1,0 +1,35 @@
+Q14. What Happens If next() Never Raises StopIteration?
+
+If the next() method of an iterator never raises the StopIteration exception, 
+then the iterator will never signal the end of iteration. 
+This causes the loop (or program using it) to run infinitely, continuously fetching values without stopping. 
+In Python, StopIteration is essential because it tells the for loop or iteration process that all elements are finished. 
+Without it, Python would not know when to stop iterating.
+
+This situation usually happens in infinite iterators, 
+where __next__() is designed to always return a value and never terminate.
+
+Example
+class InfiniteNumbers:
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        return 1   # Never raises StopIteration
+
+obj = InfiniteNumbers()
+
+for i in obj:
+    print(i)
+
+Output:
+1
+1
+1
+1
+1
+... (infinite loop)
+Conclusion
+
+If StopIteration is never raised, Python will keep calling next() forever, 
+resulting in an infinite loop or program freeze, unless manually stopped.

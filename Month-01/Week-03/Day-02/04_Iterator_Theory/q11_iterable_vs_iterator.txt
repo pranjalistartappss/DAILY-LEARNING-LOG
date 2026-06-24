@@ -1,0 +1,22 @@
+An Iterable is an object that contains data and can be traversed element by element.
+It implements the __iter__() method and can return an iterator. Examples include lists, tuples, strings, and dictionaries.
+
+An Iterator is an object that performs the actual iteration.
+It implements both __iter__() and __next__() methods and returns elements one at a time.
+When no elements remain, it raises the StopIteration exception.
+
+In simple words, an Iterable stores data, while an Iterator fetches data one by one.
+
+Example 
+numbers = [10, 20, 30]  # Iterable
+
+it = iter(numbers)      # Iterator
+
+print(next(it))
+print(next(it))
+print(next(it))
+
+Output:
+10
+20
+30

@@ -1,0 +1,59 @@
+Q15. Built-in Infinite Iterators in Python
+
+Python provides some built-in infinite iterators in the itertools module that generate values endlessly. 
+These iterators do not stop on their own because they are designed to produce an unlimited sequence of values, 
+and they must be controlled manually (for example, using break or slicing tools).
+
+The most commonly used infinite iterators are count(), cycle(), and repeat().
+
+1. count()
+count(start, step) generates an infinite sequence of numbers starting from a given value and increasing by a fixed step.
+
+2. cycle()
+cycle(iterable) repeatedly cycles through the elements of an iterable infinitely.
+
+3. repeat()
+repeat(value) repeatedly returns the same value infinitely (or a fixed number of times if specified).
+
+Example
+from itertools import count, cycle, repeat
+
+# count()
+for i in count(1):
+    if i > 5:
+        break
+    print(i)
+
+# cycle()
+count = 0
+for ch in cycle("AB"):
+    print(ch)
+    count += 1
+    if count == 6:
+        break
+
+# repeat()
+for val in repeat("Hi", 3):
+    print(val)
+
+Output:
+
+1
+2
+3
+4
+5
+A
+B
+A
+B
+A
+B
+Hi
+Hi
+Hi
+Conclusion
+
+Built-in infinite iterators in Python generate continuous sequences without stopping. 
+They are useful in situations like streaming data, simulations, and repeated processing, 
+but they must always be controlled using conditions like break to avoid infinite execution.

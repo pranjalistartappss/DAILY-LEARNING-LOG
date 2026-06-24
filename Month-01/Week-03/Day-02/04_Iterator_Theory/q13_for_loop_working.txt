@@ -1,0 +1,33 @@
+Q13. How Does a For Loop Internally Work?
+
+A for loop in Python works using the iterator protocol. When a for loop starts, 
+Python first converts the iterable into an iterator using the iter() function.
+It then repeatedly calls the next() function to retrieve elements one by one. 
+When all elements have been processed, the iterator raises the StopIteration exception, 
+and the loop automatically terminates.
+
+Example
+numbers = [10, 20, 30]
+
+for num in numbers:
+    print(num)
+
+Internally, Python does something similar to:
+
+numbers = [10, 20, 30]
+it = iter(numbers)
+
+while True:
+    try:
+        num = next(it)
+        print(num)
+    except StopIteration:
+        break
+
+Output:
+10
+20
+30
+
+Thus, a for loop automatically handles the creation of the iterator, 
+calling next(), and catching the StopIteration exception.

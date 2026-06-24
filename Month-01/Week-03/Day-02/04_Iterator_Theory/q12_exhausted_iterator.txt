@@ -1,0 +1,25 @@
+Q12. Can a Single Iterator Be Reused After It Is Exhausted?
+
+No, an iterator cannot be reused once it is exhausted. 
+When all elements have been traversed, the iterator raises the StopIteration exception and remembers that it has reached the end. 
+Calling next() again will continue to raise StopIteration.
+To iterate over the data again, a new iterator must be created from the iterable.
+
+Example
+numbers = [1, 2, 3]
+
+it = iter(numbers)
+
+for num in it:
+    print(num)
+
+print(next(it))
+
+Output:
+1
+2
+3
+StopIteration
+
+To iterate again:
+it = iter(numbers)  # Create a new iterator
