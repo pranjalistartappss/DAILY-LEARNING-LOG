@@ -1,0 +1,28 @@
+Difference Between yield and return
+
+return:
+1. Terminates the function immediately.
+2. Returns a value to the caller.
+3. Function cannot continue after return.
+
+yield:
+1. Pauses the function.
+2. Returns a value temporarily.
+3. Function state is preserved.
+4. Execution resumes from the same point.
+
+Example:
+
+def using_return():
+    return 10
+
+def using_yield():
+    yield 10
+    yield 20
+
+print(using_return())
+
+gen = using_yield()
+
+print(next(gen))
+print(next(gen))

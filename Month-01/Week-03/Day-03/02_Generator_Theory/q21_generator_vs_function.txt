@@ -1,0 +1,27 @@
+What is a generator in Python and how is it different from a normal function?
+
+Generator:
+A generator is a special type of function that uses the 'yield' keyword
+to produce values one at a time instead of returning all values at once.
+
+Normal Function:
+A normal function uses 'return' and terminates after returning a value.
+
+Generator Function:
+Uses 'yield' and pauses execution after each yield statement.
+Execution resumes from the same point when next() is called.
+
+Example:
+
+def normal_function():
+    return [1, 2, 3]
+
+def generator_function():
+    yield 1
+    yield 2
+    yield 3
+
+print(normal_function())
+
+for value in generator_function():
+    print(value)

@@ -1,0 +1,1 @@
+#Q10. Build a generator that filters out odd numbers from a list.

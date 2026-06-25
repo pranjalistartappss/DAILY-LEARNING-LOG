@@ -1,0 +1,19 @@
+What is the purpose of next()?
+
+next() retrieves the next value from a generator.
+
+If no values remain,
+StopIteration exception is raised.
+
+Example:
+
+def numbers():
+    yield 1
+    yield 2
+    yield 3
+
+gen = numbers()
+
+print(next(gen))
+print(next(gen))
+print(next(gen))

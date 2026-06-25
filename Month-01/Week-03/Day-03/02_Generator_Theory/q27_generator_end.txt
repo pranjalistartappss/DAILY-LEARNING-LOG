@@ -1,0 +1,18 @@
+What happens when a generator reaches the end?
+
+When all yield statements are exhausted,
+the generator automatically raises StopIteration.
+
+Example
+
+def demo():
+    yield 1
+    yield 2
+
+gen = demo()
+
+print(next(gen))
+print(next(gen))
+
+# next(gen)
+# Raises StopIteration

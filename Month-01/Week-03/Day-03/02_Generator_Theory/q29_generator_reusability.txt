@@ -1,0 +1,36 @@
+Can a generator be reused after it is exhausted?
+
+No.
+
+Reason:
+A generator maintains internal state.
+After all values are consumed,
+it cannot restart automatically.
+
+Create a new generator object if needed.
+
+Example:
+
+def numbers():
+    yield 1
+    yield 2
+    yield 3
+
+gen = numbers()
+
+for value in gen:
+    print(value)
+
+print("Second Loop")
+
+for value in gen:
+    print(value)
+
+# No output because generator is exhausted
+
+print("Create New Generator")
+
+gen = numbers()
+
+for value in gen:
+    print(value)

@@ -1,0 +1,24 @@
+Real World Use Cases of Generators
+
+1. Reading large files line by line.
+2. Processing huge datasets.
+3. Streaming data.
+4. Web scraping.
+5. Log processing.
+6. Infinite sequences.
+7. Data pipelines.
+8. Memory optimization.
+
+Example:
+Reading file line by line using generator.
+
+def read_file(filename):
+
+    with open(filename, "r") as file:
+
+        for line in file:
+            yield line.strip()
+
+# Usage
+# for line in read_file("data.txt"):
+#     print(line)

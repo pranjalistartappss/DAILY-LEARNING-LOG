@@ -1,0 +1,19 @@
+Role of StopIteration Exception
+
+StopIteration indicates that the iterator
+or generator has no more values to produce.
+
+It is raised automatically by Python.
+
+Example:
+
+def demo():
+    yield 10
+
+gen = demo()
+
+try:
+    print(next(gen))
+    print(next(gen))
+except StopIteration:
+    print("Generator Finished")

@@ -1,0 +1,82 @@
+def counter():
+    yield 1
+    yield 2
+    yield 3
+
+iterator = counter() #create object
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+
+
+def  counter():
+    for i in range(1,6):
+        yield i
+
+iterator = counter()
+#create object 
+for i in iterator:
+    print(i)
+
+
+# generator is a called lazy fn it doesnt work until needed 
+# geerator are special was to produce  value  one by one 
+#instead of creating at once
+
+#start execution 
+#one value return
+#pause itself
+#remember its position
+
+
+def counter(max_value):
+    count = 1
+    while count <= max_value:
+        yield count  
+        count += 1
+
+for num in counter(5):
+    print(num)
+
+
+# set comphresion  
+# even number using generator  
+
+x = (x*x for x in range(1,10))
+for num in x:
+    print(num)
+
+# one  line code for generator 
+# return = used in normal fn ,
+#terminate completely, single type of value return or entire collection at once 
+#memory usage : high (for large collection)
+
+# yield = used in generator , pause the fn and saves state
+# once at time in sequence 
+#memeory (only one item exsits in memeory a time )
+
+#method of generator :
+# send(): send data into a running generator 
+#throw(): exception to occur at the location where thw generator is currently paused 
+#close (): terminate the generator  immediateely  
+
+# def sender():
+#     while True:
+#         value = yield
+#         print("recieved value:"  , value)
+
+# g =  sender()
+# next(g)
+
+# g.send(100)
+
+
+# def demo():
+#     try:
+#         yield 1
+#     except ValueError:
+#         print("ValueError handled")
+
+# g = demo()
+# print(next(g))
+# print(g.throw(ValueError))

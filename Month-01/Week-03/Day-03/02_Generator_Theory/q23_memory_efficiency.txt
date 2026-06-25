@@ -1,0 +1,17 @@
+How does a generator save memory compared to lists?
+
+List:
+Stores all elements in memory at once.
+
+Generator:
+Produces values only when needed.
+
+This is called Lazy Evaluation.
+
+Example:
+
+numbers_list = [x for x in range(1000000)]
+numbers_generator = (x for x in range(1000000))
+
+print(type(numbers_list))
+print(type(numbers_generator))
