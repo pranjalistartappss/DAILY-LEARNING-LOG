@@ -16,4 +16,3 @@ print(square(5))
 print(square(6))
 
 
-
