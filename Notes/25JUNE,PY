@@ -1,0 +1,56 @@
+def outer():
+    # a = "hello"
+    # return a
+    print("outer function")
+
+    def inner():
+        x = 10 # local
+        print("inner function")
+        print(f"{a} {y} {x}")
+    
+    return inner 
+
+    print("before inner")
+    inner()
+    print("after inner")
+
+x = outer()
+print(x())
+
+
+#LEEB (LOCAL) (enclosing) (global) (builtin)
+
+
+def validate_positive(func):
+
+    def wrapper(*args):
+        for num in args:
+            if num <= 0:
+                raise ValueError("Arguments must be positive!")
+
+        return func(*args)
+
+    return wrapper
+
+
+@validate_positive
+def add(a, b, c, d):
+    return a + b + c + d
+
+
+@validate_positive
+def rectangle(length, width):
+    print("Rectangle Area =", length * width)
+
+
+@validate_positive
+def triangle(base, height):
+    print("Triangle Area =", 0.5 * base * height)
+
+
+rectangle(10, 5)
+triangle(8, 4)
+
+
+print(add(10, 20, 30, 40))
+print()
